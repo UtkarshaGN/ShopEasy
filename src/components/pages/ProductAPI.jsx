@@ -107,8 +107,8 @@ export default function ProductAPI() {
 
   return (
 
-    <section className='grid lg:grid-cols-[20%_auto]  grid-cols-1 gap-10 py-12'>
-      <aside className='border-1 border-[#ccc]'>
+    <section className='mx-auto grid max-w-[1320px] grid-cols-1 gap-5 px-4 py-8 sm:px-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-8 lg:px-8 lg:py-12'>
+      <aside className='min-w-0 border border-[#ccc] p-3 sm:p-4'>
         <div className='flex justify-between p-3'>
           <h3 className=''>Filters</h3>
           <button className='text-red-500 font-bold text-md'>Clear All</button>
@@ -116,11 +116,14 @@ export default function ProductAPI() {
 
         <div>
           <h3 className='font-bold text-xl '>Categories</h3>
-          <ul className='h-[130px] overflow-y-scroll p-2'>
+          <ul className='grid max-h-[180px] grid-cols-1 gap-2 overflow-y-auto p-2 sm:grid-cols-2 lg:grid-cols-1'>
             {
               categoryData.map((obj, index) => {
                 return (
-                  <li> <input type="checkbox" value ={obj.slug} onChange={categoryfilHandle} />{obj.name}</li>
+                  <li key={obj.slug ?? index} className='flex items-center gap-2 text-sm'>
+                    <input type="checkbox" value={obj.slug} onChange={categoryfilHandle} />
+                    <span>{obj.name}</span>
+                  </li>
                 )
               })
             }
@@ -131,11 +134,14 @@ export default function ProductAPI() {
 
         <div>
           <h3 className='font-bold text-xl '>Brand</h3>
-          <ul className='h-[130px] overflow-y-scroll p-3'>
+          <ul className='grid max-h-[180px] grid-cols-1 gap-2 overflow-y-auto p-3 sm:grid-cols-2 lg:grid-cols-1'>
             {
               brandData.map((obj, index) => {
                 return (
-                  <li key={index}> <input type="checkbox" />{obj.name}</li>
+                  <li key={index} className='flex items-center gap-2 text-sm'>
+                    <input type="checkbox" />
+                    <span>{obj.name}</span>
+                  </li>
                 )
               })
             }
@@ -150,9 +156,9 @@ export default function ProductAPI() {
 
       </aside>
 
-      <div className='border-1 border-[#ccc] p-3'>
-        <div className='flex justify-end'>
-          <select onChange={(e)=>setSorting(e.target.value)} className='border-1 p-2' name='' id=''>
+      <div className='min-w-0 border border-[#ccc] p-3 sm:p-4'>
+        <div className='flex justify-stretch sm:justify-end'>
+          <select onChange={(e)=>setSorting(e.target.value)} className='w-full min-w-0 border p-2 sm:w-auto' name='' id=''>
             <option value="">Sort by: Recommanded</option>
             <option value='1'>Name: A to Z </option>
             <option value='2'> Name: Z to A</option>
@@ -165,7 +171,7 @@ export default function ProductAPI() {
 
 {
   loading ? ( 
-        <div className='grid grid-cols-4 gap-6 p-3'>
+        <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 sm:gap-5 sm:p-3 xl:grid-cols-4'>
           <Loading />
           <Loading />
           <Loading />
@@ -177,7 +183,7 @@ export default function ProductAPI() {
 
         </div>):(
 
-        <div className='grid grid-cols-4 gap-6 p-3'>
+        <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2 sm:gap-5 sm:p-3 xl:grid-cols-4'>
           {
             productData.map((obj, index) => {
               return (
@@ -193,11 +199,13 @@ export default function ProductAPI() {
        
 {/*pagination*/}
 
-    <ResponsivePagination
-      current={currentPage}
-      total={totalPages}
-      onPageChange={setCurrentPage}
-    />
+    <div className='mt-5 overflow-x-auto'>
+      <ResponsivePagination
+        current={currentPage}
+        total={totalPages}
+        onPageChange={setCurrentPage}
+      />
+    </div>
 
 
        
@@ -215,18 +223,18 @@ function ProductCard({ productData }) {
   const { addToCart } = useContext(CartContext)
 
   return (
-    <div className='border-1 p-3 flex flex-col gap-4'>
-      <img src={image} alt="" />
-      <div>
+    <div className='flex min-w-0 flex-col gap-4 border p-3'>
+      <img src={image} alt={name} className='aspect-square w-full object-cover' />
+      <div className='flex flex-1 flex-col'>
         <h3 className='font-bold'>{name}</h3>
-        <p>{description}</p>
+        <p className='mt-2 line-clamp-3 text-sm text-slate-600'>{description}</p>
         <div>
-          <p>{price}</p>
+          <p className='mt-2 font-semibold'>${Number(price).toFixed(2)}</p>
         </div>
 
         <button
           type='button'
-          className='bg-amber-300 p-2 rounded-md mt-4'
+          className='mt-auto self-start rounded-md bg-amber-300 p-2'
           onClick={() => addToCart({ ...productData, cartId: `api-${productData.id ?? name}` })}
         >
           Add to Cart

@@ -48,7 +48,7 @@ export default function Home() {
               className="h-full w-full object-cover object-center transition duration-700 hover:scale-105"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to from-black/60 via-black/10 to-transparent" />
 
           
 
@@ -93,7 +93,7 @@ export default function Home() {
               className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to from-black/70 via-transparent to-transparent" />
 
             <div className="absolute bottom-6 left-6 text-white">
 
