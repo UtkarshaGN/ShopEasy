@@ -212,23 +212,8 @@ export default function ProductAPI() {
 
 function ProductCard({ productData }) {
   let { name, description, image, price } = productData
-   const {cart, setCart} = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
 
-   let AddtoCart =() =>{
-   //alert("hello")
-
-   let cartObj ={
-      name:name,
-      description:description,
-     image: image,
-     price:price,
-     qty:1
-      
-    }
-setCart([...cart, cartObj])
-alert("Add to Cart")
-    console.log(cartObj)
-  }
   return (
     <div className='border-1 p-3 flex flex-col gap-4'>
       <img src={image} alt="" />
@@ -239,7 +224,13 @@ alert("Add to Cart")
           <p>{price}</p>
         </div>
 
-        <button className='bg-amber-300 p-2  rounded-md mt-4'  onClick={AddtoCart } >Add to Cart</button>
+        <button
+          type='button'
+          className='bg-amber-300 p-2 rounded-md mt-4'
+          onClick={() => addToCart({ ...productData, cartId: `api-${productData.id ?? name}` })}
+        >
+          Add to Cart
+        </button>
       </div>
 
     </div>

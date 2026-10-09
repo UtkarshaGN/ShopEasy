@@ -10,8 +10,8 @@ export default function Product() {
             <div className='max-w-[1320px] mx-auto grid grid-cols-4 gap-4'>
 
      {
-       productlist.map((obj, index)=>{
-        return <ProductCard key={index} data = {obj}/>
+       productlist.map((obj)=>{
+        return <ProductCard key={obj.id} data = {obj}/>
        })
      }
 
@@ -25,14 +25,20 @@ export default function Product() {
 
 
 function ProductCard( {data}){
- let{title, thumbnail,description,id} = data
+ let{title, thumbnail,id} = data
 return(
-    <figure className='shadow-2xl'>
-        <img src={thumbnail} alt="" />
-         <h3 className='text-center p-3'>{title} </h3>
+    <figure className='shadow-2xl rounded-lg overflow-hidden'>
+        <Link
+          to={`/product/${id}`}
+          className='block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500'
+          aria-label={`View details for ${title}`}
+        >
+          <img src={thumbnail} alt={title} className='w-full aspect-square object-cover' />
+          <h3 className='text-center p-3'>{title}</h3>
+        </Link>
 
          <Link to ={`/product/${id}`}>
-          <button className='p-3 bg-amber-400 m-2 rounded-2xl'>Add to Cart</button>
+          <button className='p-3 bg-amber-400 m-2 rounded-2xl'>View Details</button>
          </Link>
         
     </figure>

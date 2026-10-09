@@ -5,16 +5,14 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50">
 
       {/*  HERO SECTION */}
-      <section className="w-full px-2  sm:px-4 lg:px-2">
+      <section className="w-full  sm:px-4 ">
 
         <div className="grid min-h-[650px] overflow-hidden rounded-lg bg-slate-900 lg:grid-cols-2">
 
           {/* LEFT CONTENT */}
           <div className="flex flex-col justify-center px-8 py-16 sm:px-12 lg:px-20 xl:px-28">
 
-            <span className="w-fit rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white">
-              New Collection 2026
-            </span>
+            
 
             <h1 className="mt-6 max-w-2xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
               Everything you love,
@@ -23,11 +21,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
-              Discover stylish products, everyday essentials, and amazing
-              deals designed to make your shopping experience simple and
-              enjoyable.
-            </p>
+           
 
             <div className="mt-8 flex flex-wrap gap-4">
 
@@ -41,31 +35,7 @@ export default function Home() {
 
             </div>
 
-            {/* STATS */}
-            <div className="mt-12 flex flex-wrap gap-8 sm:gap-12">
-
-              <div>
-                <p className="text-2xl font-bold text-white">10K+</p>
-                <p className="mt-1 text-sm text-slate-400">
-                  Happy Customers
-                </p>
-              </div>
-
-              <div>
-                <p className="text-2xl font-bold text-white">500+</p>
-                <p className="mt-1 text-sm text-slate-400">
-                  Products
-                </p>
-              </div>
-
-              <div>
-                <p className="text-2xl font-bold text-white">4.9</p>
-                <p className="mt-1 text-sm text-slate-400">
-                  Rating
-                </p>
-              </div>
-
-            </div>
+           
 
           </div>
 
@@ -80,32 +50,7 @@ export default function Home() {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            {/* FLOATING CARD */}
-            <div className="absolute bottom-8 left-6 right-6 rounded-2xl bg-white/95 p-5 shadow-2xl backdrop-blur sm:left-8 sm:right-auto sm:min-w-[300px]">
-
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-purple-600">
-                Today's Pick
-              </p>
-
-              <div className="mt-2 flex items-center justify-between gap-5">
-
-                <div>
-                  <p className="text-lg font-semibold text-slate-900">
-                    Premium Collection
-                  </p>
-
-                  <p className="mt-1 text-sm text-slate-500">
-                    Starting from $49
-                  </p>
-                </div>
-
-                <button className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xl text-white transition hover:bg-purple-600">
-                  →
-                </button>
-
-              </div>
-
-            </div>
+          
 
           </div>
 
@@ -114,7 +59,7 @@ export default function Home() {
       </section>
 
 
-      {/* ================= IMAGE GALLERY ================= */}
+      {/* IMAGE GALLERY  */}
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 
         <div className="mb-8 flex items-end justify-between">
