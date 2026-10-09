@@ -1,5 +1,5 @@
 shop-easy-1fxtwd2cb-utkarshagns-projects.vercel.app
-ShopEase – E-commerce Web Application
+ShopEase –  Mini E-commerce Web Application
 
 Developed a responsive e-commerce web application using React.js and an external REST API. The application allows users to browse products, filter products by brand and category, and sort products by name and price.
 
