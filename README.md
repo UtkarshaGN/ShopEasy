@@ -1,9 +1,9 @@
 shop-easy-1fxtwd2cb-utkarshagns-projects.vercel.app
-ShopEase –  Mini E-commerce Web Application
+### ShopEase –  Mini E-commerce Web Application
 
 Developed a  mini responsive e-commerce web application using React.js and an external REST API. The application allows users to browse products, filter products by brand and category, and sort products by name and price.
 
-Key Features:
+### Key Features:
 
 Integrated an external REST API to fetch product, category, and brand data.
 
@@ -23,4 +23,4 @@ Created reusable React components for better code organization and maintainabili
 
 Designed a responsive user interface suitable for desktop and mobile devices.
 
-##Technologies: React.js, JavaScript (ES6+), Tailwind CSS, Context API, REST API, Axios, Git & GitHub.
+### Technologies: React.js, JavaScript (ES6+), Tailwind CSS, Context API, REST API, Axios, Git & GitHub.
